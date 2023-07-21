@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="{% static 'styles/registration.css' %}">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form action=" " method="post">
+      {% csrf_token %}
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Enter your Username" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="fname" placeholder="Enter your First Name" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="lname" placeholder="Enter your Last Name" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="pw" placeholder="Create password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="cpw" placeholder="Confirm password" required>
+
+      </div>
+
+      <div class="input-box button">
+        <input type="Submit" value="Register Now">
+      </div>
+     <div class="text">
+      {% for i in messages %}<h2 style="color:red";><i>{{i}}</i> </h2>{% endfor %}
+        <h3>Already have an account? <a href="/credentials/login/">Login now</a></h3>
+      </div>
+    </form>
+
+  </div>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--  <html>-->
+<!--  <head>-->
+<!--  	<title>Registration Form</title>-->
+<!--  	<style>-->
+<!--		table, th, td {-->
+<!--	        border: 1px solid white;-->
+<!--	        padding:10px;}-->
+<!--	    }-->
+<!--	</style></head>-->
+<!--  <body>-->
+<!--  	<h2 align="center">Registration Form</h2>-->
+<!--  	<form method="post" action=" ">-->
+<!--		{% csrf_token %}-->
+
+<!--        <table align="center">-->
+
+<!--        	<tr>-->
+<!--        		<td><label for="username">Username:</label></td>-->
+<!--        	    <td><input type="text" id="username" name="username"></td>-->
+<!--        	</tr>-->
+<!--			<tr>-->
+<!--        		<td><label for="fname">First Name:</label></td>-->
+<!--        	    <td><input type="text" id="fname" name="fname" ></td>-->
+<!--        	</tr>-->
+<!--			<tr>-->
+<!--        		<td><label for="lname">Last Name:</label></td>-->
+<!--        	    <td><input type="text" id="lname" name="lname" ></td>-->
+<!--        	</tr>-->
+<!--        	<tr>-->
+<!--        		<td><label for="email">Email:</label></td>-->
+<!--        	    <td><input type="email" id="email" name="email" placeholder="abc@xyz.com"></td>-->
+<!--        	</tr>-->
+
+<!--        	<tr>-->
+<!--        		<td><label for="password">Password:</label></td>-->
+<!--        	    <td><input type="password" id="password" name="pw"></td>-->
+<!--        	</tr>-->
+<!--			<tr>-->
+<!--        		<td><label for="cpassword">confirm Password:</label></td>-->
+<!--        	    <td><input type="password" id="cpassword" name="cpw"></td>-->
+<!--        	</tr>-->
+
+<!--        	<tr><td colspan="2" align="center"><input type="submit"></td></tr>-->
+<!--			<tr> <td colspan="2">{% for i in messages %}<h2 style="color:red";> {{i}}</h2>{% endfor %}</td></tr>-->
+
+<!--  	</form>-->
+
+<!--  </body>-->
+<!--  </html>-->
+
+
+
+
+
+
